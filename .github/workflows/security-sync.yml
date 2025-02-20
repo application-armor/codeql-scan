@@ -1,7 +1,7 @@
 name: Sync GitHub Findings to Jira
 
 on:
-  workflow_call:  # Allows the template to be called from another repo
+  workflow_call:  # Allows the template to be called from another repository
 
 jobs:
   security-sync:
