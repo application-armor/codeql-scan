@@ -1,9 +1,18 @@
 name: Sync GitHub Findings to Jira
 
 on:
-  workflow_call:  # Allows the template to be called from another repository
+  workflow_call:
+    secrets:
+      JIRA_API_TOKEN:
+        required: true
+      JIRA_EMAIL:
+        required: true
+      JIRA_BASE_URL:
+        required: true
+      JIRA_EPIC_KEY:
+        required: true
 
 jobs:
   security-sync:
     uses: application-armor/security-workflow-template/.github/workflows/vulnerability-sync.yml@main
-    secrets: inherit  # Use secrets from the repo
+    secrets: inherit
