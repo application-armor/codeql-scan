@@ -50,10 +50,5 @@ jobs:
     name: Sync CodeQL Findings to Jira
     runs-on: ubuntu-latest
     needs: analyze  # This ensures sync happens after the CodeQL analysis
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Sync vulnerabilities to Jira
-        uses: application-armor/security-workflow-template/.github/workflows/vulnerability-sync.yml@main
-        secrets: inherit
+    uses: application-armor/security-workflow-template/.github/workflows/vulnerability-sync.yml@main
+    secrets: inherit
